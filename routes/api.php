@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/** Listado API**/
+// establecimientos
+Route::get('/establecimientos',['App\Http\Controllers\ApiController','establecimientos'])->name('api.establecimientos');
+Route::get('/establecimientos/{establecimiento}',['App\Http\Controllers\ApiController','establecimiento'])->name('api.establecimiento');
+// categorias -> establecimientos
+Route::get('/categorias',['App\Http\Controllers\ApiController','categorys'])->name('api.categorias');
+Route::get('/categorias/{categoria}',['App\Http\Controllers\ApiController','category'])->name('api.categoria');
+
